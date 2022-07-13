@@ -1,79 +1,61 @@
-/*!
-    * Start Bootstrap - Freelancer v6.0.3 (https://startbootstrap.com/themes/freelancer)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)
-    */
-    (function($) {
-    "use strict"; // Start of use strict
-  
-    // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: (target.offset().top - 71)
-          }, 1000, "easeInOutExpo");
-          return false;
-        }
-      }
-    });
-  
-    // Scroll to top button appear
-    $(document).scroll(function() {
-      var scrollDistance = $(this).scrollTop();
-      if (scrollDistance > 100) {
-        $('.scroll-to-top').fadeIn();
-      } else {
-        $('.scroll-to-top').fadeOut();
-      }
-    });
-  
-    // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
-      $('.navbar-collapse').collapse('hide');
-    });
-  
-    // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
-      target: '#mainNav',
-      offset: 80
-    });
 
-  
-    // Floating label headings for the contact form
-    $(function() {
-      $("body").on("input propertychange", ".floating-label-form-group", function(e) {
-        $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-      }).on("focus", ".floating-label-form-group", function() {
-        $(this).addClass("floating-label-form-group-with-focus");
-      }).on("blur", ".floating-label-form-group", function() {
-        $(this).removeClass("floating-label-form-group-with-focus");
-      });
-    });
-  
-  })(jQuery); // End of use strict
+
+
 
 
 function pageTopHide() {
-    // Selectors
     var container = $('.masthead');
     if (container.length == 0)
         return;
-    console.log("hi")
 
-        // Calculate scale
         var scrollTop = $(window).scrollTop();
         var scale = scrollTop/window.screen.height;;
         if (scale > 1)
             scale = 1;
 
-        container.css({opacity:1-scale, transform:'translate3d(0, '+(-scrollTop/5)+'px, 0)'})
-        container.find('.masthead-avatar').css({transform: 'scale('+(1-scale/2)+')'});
-        container.find('.masthead-heading').css({transform: 'scale('+(1-scale/3)+')'});
-        container.find('.page-nav').css({transform: 'scale('+(1-scale/5)+')'});
+        container.css({opacity:1-scale, transform:'translate3d(0, '+(-scrollTop/2.5)+'px, 0)'})
+        container.find('.masthead-avatar').css({transform: 'scale('+(1-(scale*2))+')'});
+        container.find('.masthead-heading').css({transform: 'scale('+(1-scale/1.5)+')'});
+        container.find('.page-nav').css({transform: 'scale('+(1-scale/2.5)+')'});
 
 }
-$(window).on('scroll', pageTopHide)
-  
+
+const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const elementOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+    element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+    let scrollElements = document.querySelectorAll(".skills");
+    scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        } else if (elementOutofView(el)) {
+            hideScrollElement(el)
+        }
+    })
+}
+
+window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+    pageTopHide();
+});

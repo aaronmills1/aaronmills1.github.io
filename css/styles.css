@@ -10145,7 +10145,28 @@ h3 {
 .masthead .masthead-avatar {
   width: 15rem;
   border-radius: 15em;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
 }
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+}
+
+
+
 
 @media (min-width: 992px) {
   .masthead .masthead-heading {
@@ -10246,11 +10267,27 @@ form .row:first-child .floating-label-form-group {
   padding-bottom: 1rem;
   color: #2c3e50;
 }
-
 .skills{
   margin-top: 3rem;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
-
+.scrolled.skills {
+  animation: fade-in-bottom 1s ease-in-out both;
+  opacity: 1;
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .skillsrow{
  margin-top:-9rem;
