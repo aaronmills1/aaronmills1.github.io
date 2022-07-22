@@ -10317,6 +10317,12 @@ li{
   list-style-type: none;
   padding-bottom: 1rem;
 }
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.7;
+  z-index: -100;
+}
 @media (max-width: 576px) {
   .skillsetsubheading{
     padding-top: 1rem;
@@ -10348,6 +10354,7 @@ li{
   }
   .page-section {
     padding: 4rem 0;
+    z-index: 10;
   }
   .carouselcontainer{
     padding-top: 2rem;
