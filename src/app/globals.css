@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  /* global styles */
+  *::selection {
+    @apply bg-secondary/30;
+  }
+
+  html {
+    @apply text-[1vw] max-lg:text-[1.5vw] max-md:text-[2vw] max-sm:text-[3.5vw];
+  }
+
+  body {
+    @apply bg-background font-body font-light overscroll-y-none;
+  }
+}
+
+@layer components {
+  .box {
+    @apply size-full bg-primary text-text rounded-[16px] p-6 overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .absolute-center {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+  }
+}

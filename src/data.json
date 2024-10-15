@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "logo": "Bentolio",
+    "links": [
+      {
+        "title": "Buy Next.js template",
+        "url": "https://rauftech.lemonsqueezy.com/buy/43d4f6ca-c525-497f-a77a-8148150335dc"
+      }
+    ]
+  },
+
+  "intro": {
+    "heading": "Let’s create dance floor <span class='italic'> magic</span> for your special day",
+    "icon": "/icons/intro-icon.svg"
+  },
+   
+  "portrait": {
+    "image": "/portrait.png"
+  },
+
+  "about": {
+    "text": "DJ Lisa is a passionate wedding DJ, acclaimed for blending diverse musical genres with expert crowd-reading skills. Based in Florida, she crafts personalized soundtracks that turn every wedding into an unforgettable celebration.",
+    "icon": "/icons/about-icon.svg"
+  },
+
+  "contact": {
+    "label": "Have some questions?",
+    "heading": "Contact <span class='italic'>me</span>",
+    "linkIcon": "/icons/arrow-icon.svg",
+    "email": "hello@rauftech.com"
+  },
+
+  "work": {
+    "projects": [
+      {
+        "title": "First Dance",
+        "url": "",
+        "media": "/work.png"
+      },
+      {
+        "title": "Cocktail Hour",
+        "url": "",
+        "media": "/work.png"
+
+      },
+      {
+        "title": "Dinner Music",
+        "url": "",
+        "media": "/work.png"
+
+      },
+      {
+        "title": "After Party",
+        "url": "",
+        "media": "/work.png"
+
+      },
+      {
+        "title": "Last Dance",
+        "url": "",
+        "media": "/work.png"
+      }
+    ],
+    "linkIcon": "/icons/arrow-icon-black.svg"  
+  },
+
+ 
+  "socials": {
+    "links": [
+      {
+        "title": "Figma",
+        "url": "https://www.figma.com/@lilcoderman"
+      },
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/lilcoderman/"
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/abdulrauf11"
+      }
+    ]
+  }
+}
