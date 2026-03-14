@@ -29,8 +29,11 @@ jobs:
         with:
           static_site_generator: next
 
-      - name: Build with Next.js 🏗️
-        run: npx next build
+      - name: Build static export with Next.js 🏗️
+        run: npm run build
+
+      - name: Verify static export output 📦
+        run: test -d ./out && ls -la ./out
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
